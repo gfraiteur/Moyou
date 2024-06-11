@@ -67,11 +67,13 @@ jobs:
       with:
         dotnet-version: ${{ matrix.dotnet-version }}
 
-    # Test
-    - name: dotnet build
+    - name: dotnet restore
+      run: dotnet build
+  
+
+    - name: dotnet build --no-restore
       run: dotnet build
 
-    # Test
     - name: dotnet test
       run: dotnet test
 
