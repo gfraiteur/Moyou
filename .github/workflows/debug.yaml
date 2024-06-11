@@ -70,3 +70,5 @@ jobs:
     # Test
     - name: Execute tests
       run: dotnet test
+
+# Foo
