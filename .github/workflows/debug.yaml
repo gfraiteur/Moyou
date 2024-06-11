@@ -68,7 +68,11 @@ jobs:
         dotnet-version: ${{ matrix.dotnet-version }}
 
     # Test
-    - name: Execute tests
+    - name: dotnet build
+      run: dotnet build
+
+    # Test
+    - name: dotnet test
       run: dotnet test
 
 # Foo
