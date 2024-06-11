@@ -29,5 +29,5 @@ jobs:
               with:
                   dotnet-version: ${{ matrix.dotnet-version }}
             - run: dotnet restore
-            - run: dotnet build --configuration Debug --no-restore  --disable-build-servers -v:detailed
-            - run: dotnet test --configuration Release --no-restore  --disable-build-servers -v:detailed
+            - run: dotnet build --configuration Debug --no-restore -v:detailed #  --disable-build-servers
+            - run: dotnet test --configuration Release --no-restore -v:detailed # --disable-build-servers 
