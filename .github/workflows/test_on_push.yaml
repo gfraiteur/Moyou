@@ -10,6 +10,8 @@ on:
         - .gitignore
         - AuthoringTool/electron.manifest.json
     pull_request:
+env:
+    METALAMA_CONSOLE_TRACE: '*'
 jobs:
     build-and-test:
         strategy:
@@ -27,5 +29,5 @@ jobs:
               with:
                   dotnet-version: ${{ matrix.dotnet-version }}
             - run: dotnet restore
-            - run: dotnet build --configuration Debug --no-restore
-            - run: dotnet test --configuration Release --no-restore
+            - run: dotnet build --configuration Debug --no-restore  --disable-build-servers -v:detailed
+            - run: dotnet test --configuration Release --no-restore  --disable-build-servers -v:detailed
